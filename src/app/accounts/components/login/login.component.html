@@ -1,0 +1,30 @@
+<p>login works!</p>
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm.form)">
+<h2>UserName</h2>
+<input name="usernameControl" type="text" [(ngModel)]="username"
+#usernameControl="ngModel" required maxlength="8"/>
+<br/>
+<h2>Password</h2>
+<input name="passwordControl" type="text" [(ngModel)]="password"
+#passwordControl="ngModel" required maxlength="8"/>
+<br/>
+<div *ngIf="usernameControl.errors">
+    <output *ngIf="usernameControl.errors['required']">Username is required</output>
+
+
+    <output *ngIf="usernameControl.errors['maxlength']">Username must be 8 length required</output>
+    </div>
+    
+        
+    
+    <div *ngIf="passwordControl.errors">
+    <output *ngIf="passwordControl.errors['required']">Password is required</output>
+    <output *ngIf="passwordControl.errors['maxlength']">Password must be 8 length</output>
+    </div>
+
+
+<input type="submit" value="Submit" formnovalidate>
+<button (click)="clear()">Clear</button>
+</form>
+
+

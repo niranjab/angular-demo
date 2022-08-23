@@ -1,0 +1,5 @@
+<input type="text" #weightvalue (input)="setweight(weightvalue.value)" [value]="weight">
+<input type="text" #heightvalue (input)="setheight(heightvalue.value)" [value]="height">
+<button (click)="calculateBMI()">Calculate BMI</button>
+<button (click)="clear()">Clear</button>
+<span>BMI is: {{bmi}}</span>
